@@ -1,0 +1,35 @@
+{% extends 'navbar.html' %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="../static/cart.css">
+{% endblock css %}
+
+{% block headeraccess %}
+    <li>
+        <a href="{{url_for('home')}}">Home</a>
+    </li>
+    <li>
+        <a href="{{url_for('menu')}}">Menu</a>
+    </li>
+{% endblock headeraccess%}
+
+{% block content %}
+    <form action="{{url_for('cart')}}" method="POST">
+        <div class="cart">
+            <h2>Current Cart:</h2>
+            {% if allitems %}
+                {% for item in allitems %}
+                    <p><b>{{item['item_name']}}<br>Quantity:</b> {{item['quantity']}}</p>
+                    <button type="submit" name="delete" value="{{item}}">Delete</button>
+                {% endfor %}
+                <p>Total: ${{pricetotal}}</p>
+            {% endif %}
+        </div>
+        <button type="submit" name="order">Place Order</button>
+    </form>
+{% endblock content %}
+
+
+{% block footer %}
+    <footer></footer>
+{% endblock footer %}

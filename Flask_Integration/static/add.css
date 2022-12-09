@@ -1,0 +1,49 @@
+body {
+    align-content: center;
+}
+
+
+.inputfields .inputform .inputtitle {
+    margin: 0;
+    align-content: center;
+    text-align: center;
+}
+
+.inputfields .inputform .inputtitle h2 {
+    font-size: medium;
+    position: relative;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.inputfields .inputform .inputtitle h2:after {
+    content: '';
+    background: coral;
+    width: 100%;
+    height: 6px;
+    display: block;
+}
+
+.inputform .itemnamefield {
+    width: 20%;
+}
+
+.inputform .descriptionfield {
+    width: 60%;
+}
+
+.inputform .ingredientsfield {
+    width: 60%;
+}
+
+
+form {
+    align-content: center;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+input {
+    text-align: center;
+}
+

@@ -1,0 +1,39 @@
+{% extends 'navbar.html' %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="../static/editor.css">
+{% endblock css %}
+
+{% block headeraccess %}
+    <li>
+        <a href="{{url_for('home')}}">Home</a>
+    </li>
+    <li>
+        <a href="{{url_for('empmenu')}}">Edit Menu</a>
+    </li>
+    <li>
+        <a href="{{url_for('orders')}}">View Orders</a>
+    </li>
+{% endblock headeraccess %}
+
+{% block content %}
+    {% if orders %}
+        <div class="order">
+            {% for order in orders %}
+                <h2>Order Number: {{order['ordercount']}}</h2>
+                {% for item in order['items']%}
+                    <p><b>{{item['item_name']}}</b><br>Qty: {{item['quantity']}}</p>
+                {% endfor %}
+                <p><strong>Total: </strong>${{order['price']}}</p>
+                {% if order['ordercount'] != order['maxcount'] %}
+                    <hr />
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock content %}
+
+{% block footer %}
+    <footer>
+    </footer>
+{% endblock footer %}

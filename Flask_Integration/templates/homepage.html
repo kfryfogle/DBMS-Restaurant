@@ -1,0 +1,20 @@
+{% extends 'navbar.html' %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="../static/home.css">
+{% endblock css %}
+
+{% block headeraccess %}
+    <li>
+        <a href="{{url_for('home')}}">Home</a>
+    </li>
+{% endblock headeraccess %}
+
+{% block content %}
+    <div class="home">
+        <p>Customer?</p>
+        <a href="{{url_for('menu')}}" class="button">Menu</a><br>
+        <p>Employee?</p>
+        <a href="{{url_for('emplogin')}}" class="button">Login</a><br>
+    </div>
+{% endblock content %}

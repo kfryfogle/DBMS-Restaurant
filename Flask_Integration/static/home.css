@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(31, 31, 31, 0.91);
+}
+
+
+
+.home p {
+    text-align: center;
+    color: white
+}
+
+.button {
+    margin: auto;
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: rgb(31, 31, 31, 0.91);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-color: white;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: white;
+    color:rgb(31, 31, 31, 0.91);
+}

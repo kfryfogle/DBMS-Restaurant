@@ -1,0 +1,53 @@
+{% extends 'navbar.html' %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="../static/add.css">
+    <link rel="stylesheet" type="text/css" href="../static/editor.css">
+{% endblock css %}
+
+{% block headeraccess %}
+    <li>
+        <a href="{{url_for('home')}}">Home</a>
+    </li>
+    <li>
+        <a href="{{url_for('empmenu')}}">Edit Menu</a>
+    </li>
+    <li>
+        <a href="{{url_for('orders')}}">View Orders</a>
+    </li>
+{% endblock headeraccess %}
+
+
+{% block content %}
+    {% if chosenitem %}
+        <div class="inputfields">
+            <form class="inputform" method="POST">
+                <div class="inputtitle">
+                    <h2>Currently Editing: {{chosenitem['item_name']}} </h2>
+                </div>
+                <div class="inputtitle">
+                    <h2>Item Description: </h2>
+                </div>
+                <input class="descriptionfield" type="text" placeholder="description of item" name="description" value="{{
+                    chosenitem['description']}}"><br>
+                <div class="inputtitle">
+                    <h2>Ingredients: </h2>
+                </div>
+                <input class="ingredientsfield" type="text" placeholder="tomatoes, cheese, water, bread, ..." name="ingredients" value="{{chosenitem['ingredients']}}"><br>
+                <div class="inputtitle">
+                    <h2>Price: </h2>
+                </div>
+                <input class="pricefield" type="text" placeholder="price of item" name="price" value="{{
+                    chosenitem['price']}}"><br>
+                <button type="submit" name="save_exit" value="{{chosenitem['item_name']}}">Save Changes</button>
+                <button type="submit" name="delete_item" value="{{chosenitem['item_name']}}">Delete Item</button><br>
+                <button type="submit" name="back" value="back">Back</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+{% block footer %}
+    <footer>
+    </footer>
+{% endblock footer %}

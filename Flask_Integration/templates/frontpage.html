@@ -1,0 +1,21 @@
+{% extends 'navbar.html' %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="../static/login.css">
+{% endblock css %}
+
+
+{% block content %}
+    <div class="login">
+        <p>Login to Database</p><br>
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }} </p><br>
+        {% endif %}
+        <form action="{{url_for('frontpage')}}" method="POST">
+            <input class="loginfield" type="text" placeholder="Username" name="username" value="{{
+                request.form.username }}"><br>
+            <input class="loginfield" type="text" placeholder="Password" name="password" value="{{
+                request.form.password }}"><br>
+            <input class="btn" type="submit" value="Login">
+        </form>
+    </div>
+{% endblock content %}

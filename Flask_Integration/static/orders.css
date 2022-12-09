@@ -1,0 +1,24 @@
+body {
+    align-content: center;
+}
+
+body .order ul {
+    list-style: none;
+    float: right;
+    margin: 0;
+}
+
+body .order li {
+    list-style: none;
+    text-align: left;
+    vertical-align:middle;
+}
+
+body hr {
+    color: lightgrey;
+    background-color: lightgray;
+    border: none;
+    height: 1px;
+    width: auto;
+    
+}

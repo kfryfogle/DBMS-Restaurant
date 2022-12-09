@@ -1,0 +1,152 @@
+{% extends 'navbar.html' %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="../static/menu.css">
+{% endblock css %}
+
+{% block headeraccess %}
+    <li>
+        <a href="{{url_for('home')}}">Home</a>
+    </li>
+    <li>
+        <a href="{{url_for('cart')}}">View Cart</a>
+    </li>
+{% endblock headeraccess %}
+
+{% block content %}
+    <div class="menufilter"> 
+        <h2 class="menusection"> MENU </h2>
+        <hr class="menudivider">
+        <form action="{{url_for('menu')}}" method="POST">
+            <h2 class="filterhead"> Filter Menu: </h2>
+            <label for="options">Select Filter Criteria:</label>
+            <select name="options" id="options">
+                <option value="category">Category</option>
+                <option value="ingredients">Ingredients</option>
+                <option value="price">Price</option>
+            </select><br>
+            <label for="filterquery">Input: </label>
+            <input class="filterfield" type="text" placeholder="tomatoes, cheese, ..." name="filterquery"><br>
+            <input class="btn" type="submit" value="Filter">
+        </form>
+    </div>
+    <div class="Menu">
+            {% if filteritems %}
+            <h2 class="menusection">Beverages</h2>
+            <hr />
+                <ul>
+                    {% for row in filteritems[0] %}
+                        {% if filteritems[0][-1]['item_name'] == row['item_name']%}
+                            <li class="menuitem">
+                                <h2 class="item">{{row['item_name']}}</h2>
+                                <p class="itemdesc">description: {{row['description']}}</p>
+                                <p class="iteming">ingredients: {{row['ingredients']}}</p>
+                                <h2 class="itemprice"> ${{row['price']}}</h2>
+                                <div class="addtocart">
+                                    <form action="{{url_for('menu')}}" method="POST">
+                                        <input class="qtyfield" type="number" placeholder="0" name="qty" value="0"> <br>
+                                        <button type="submit" name="add" value="{{row['item_name']}}">Add to Cart</button> 
+                                    </form>
+                                </div>
+                            </li>
+                            <br>
+                        {% else %}
+                            <li class="menuitem">
+                                <h2 class="item">{{row['item_name']}}</h2>
+                                <p class="itemdesc">description: {{row['description']}}</p>
+                                <p class="iteming">ingredients: {{row['ingredients']}}</p>
+                                <h2 class="itemprice"> ${{row['price']}}</h2>
+                                <div class="addtocart">
+                                    <form action="{{url_for('menu')}}" method="POST">
+                                        <input class="qtyfield" type="number" placeholder="0" name="qty" value="0"> <br>
+                                        <button type="submit" name="add" value="{{row['item_name']}}">Add to Cart</button> 
+                                    </form>
+                                </div>
+                                <hr />
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            {% endif %}
+            <h2 class="menusection">Entrees</h2>
+            <hr />
+            {% if filteritems %}
+                <ul>
+                    {% for row in filteritems[1] %}
+                        {% if filteritems[1][-1]['item_name'] == row['item_name']%}
+                            <li class="menuitem">
+                                <h2 class="item">{{row['item_name']}}</h2>
+                                <p class="itemdesc">description: {{row['description']}}</p>
+                                <p class="iteming">ingredients: {{row['ingredients']}}</p>
+                                <h2 class="itemprice"> ${{row['price']}}</h2>
+                                <div class="addtocart">
+                                    <form action="{{url_for('menu')}}" method="POST">
+                                        <input class="qtyfield" type="number" placeholder="0" name="qty" value="0"> <br>
+                                        <button type="submit" name="add" value="{{row['item_name']}}">Add to Cart</button> 
+                                    </form>
+                                </div>
+                            </li>
+                            <br>
+                        {% else %}
+                            <li class="menuitem">
+                                <h2 class="item">{{row['item_name']}}</h2>
+                                <p class="itemdesc">description: {{row['description']}}</p>
+                                <p class="iteming">ingredients: {{row['ingredients']}}</p>
+                                <h2 class="itemprice"> ${{row['price']}}</h2>
+                                <div class="addtocart">
+                                    <form action="{{url_for('menu')}}" method="POST">
+                                        <input class="qtyfield" type="number" placeholder="0" name="qty" value="0"> <br>
+                                        <button type="submit" name="add" value="{{row['item_name']}}">Add to Cart</button> 
+                                    </form>
+                                </div>
+                                <hr />
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <h2 class="menusection">Sides</h2>
+            <hr />
+            {% if filteritems %}
+                <ul>
+                    {% for row in filteritems[2] %}
+                        {% if filteritems[2][-1]['item_name'] == row['item_name']%}
+                            <li class="menuitem">
+                                <h2 class="item">{{row['item_name']}}</h2>
+                                <p class="itemdesc">description: {{row['description']}}</p>
+                                <p class="iteming">ingredients: {{row['ingredients']}}</p>
+                                <h2 class="itemprice"> ${{row['price']}}</h2>
+                                <div class="addtocart">
+                                    <form action="{{url_for('menu')}}" method="POST">
+                                        <input class="qtyfield" type="number" placeholder="0" name="qty" value="0"> <br>
+                                        <button type="submit" name="add" value="{{row['item_name']}}">Add to Cart</button> 
+                                    </form>
+                                </div>
+                             </li>
+                             <br>
+                        {% else %}
+                            <li class="menuitem">
+                                <h2 class="item">{{row['item_name']}}</h2>
+                                <p class="itemdesc">description: {{row['description']}}</p>
+                                <p class="iteming">ingredients: {{row['ingredients']}}</p>
+                                <h2 class="itemprice"> ${{row['price']}}</h2>
+                                <div class="addtocart">
+                                    <form action="{{url_for('menu')}}" method="POST">
+                                        <input class="qtyfield" type="number" placeholder="0" name="qty" value="0"> <br>
+                                        <button type="submit" name="add" value="{{row['item_name']}}">Add to Cart</button>  
+                                    </form>
+                                </div>
+                                <hr />
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+    </footer>
+{% endblock footer %}

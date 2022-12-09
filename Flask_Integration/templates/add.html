@@ -1,0 +1,61 @@
+{% extends 'navbar.html' %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="../static/add.css">
+{% endblock css %}
+
+{% block headeraccess %}
+    <li>
+        <a href="{{url_for('home')}}">Home</a>
+    </li>
+    <li>
+        <a href="{{url_for('empmenu')}}">Edit Menu</a>
+    </li>
+    <li>
+        <a href="{{url_for('orders')}}">View Orders</a>
+    </li>
+{% endblock headeraccess %}
+
+{% block content %}
+    <div class="inputfields">
+            <form class="inputform" method="POST">
+                <div class="inputtitle">
+                    <h2>Item Name: </h2>
+                </div>
+                {% if nameerror %}
+                    <p><b>Error: </b>{{nameerror}}<p>
+                {% endif %}
+                <input class="item_name" type="text" placeholder="name of item" name="item_name"><br>
+                <div class="inputtitle">
+                    <h2>Item Category: </h2>
+                </div>
+                <select name="categories" id="categories">
+                    <option value="drink">Beverage</option>
+                    <option value="entree">Entree</option>
+                    <option value="side">Side</option>
+                </select>
+                <div class="inputtitle">
+                    <h2>Item Description: </h2>
+                </div>
+                {% if descriptionerror %}
+                    <p><b>Error: </b>{{descriptionerror}}<p>
+                {% endif %}
+                <input class="descriptionfield" type="text" placeholder="description of item" name="description"><br>
+                <div class="inputtitle">
+                    <h2>Ingredients: </h2>
+                </div>
+                <input class="ingredientsfield" type="text" placeholder="tomatoes, cheese, water, bread, ..." name="ingredients" ><br>
+                <div class="inputtitle">
+                    <h2>Price: </h2>
+                </div>
+                <input class="pricefield" type="text" placeholder="price of item" name="price"><br>
+                <button type="submit" name="add" value="add">Save and Exit</button><br>
+                <button type="submit" name="back" value="back">Back</button>
+            </form>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    <footer>
+    </footer>
+{% endblock footer %}

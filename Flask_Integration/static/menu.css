@@ -1,0 +1,78 @@
+body {
+    border: black;
+    border-width: 2px;
+}
+
+body hr {
+    color: coral;
+    background-color: coral;
+    border: none;
+    width: 95%;
+    height: 3px; 
+}
+
+.menusection {
+    text-align: center;
+    font-size: large;
+    font: bolder;
+}
+
+.filterhead {
+    text-align: center;
+    font-size: medium;
+}
+
+.menufilter {
+    text-align: center;
+    align-items: center;
+}
+
+.Menu ul hr {
+    border-right-width: 5%;
+    margin: auto;
+    color: lightgrey;
+    background-color: lightgray;
+    border: none;
+    height: 1px;
+    width: auto;
+}
+
+.Menu ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.Menu ul li {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.Menu ul li .item {
+    text-align: center;
+    font-size: medium;
+}
+
+.Menu ul li .itemdesc {
+    text-align: center;
+    font-style: italic;
+}
+
+.Menu ul li .iteming {
+    text-align: center;
+    font-style: italic;
+}
+
+.Menu ul li .itemprice {
+    text-align: center;
+    font-size: small;
+}
+
+div .addtocart {
+    align-content: center;
+    text-align: center;
+    font-size: medium;
+}
+
+.addtocart .qtyfield {
+    width: 6%;
+}

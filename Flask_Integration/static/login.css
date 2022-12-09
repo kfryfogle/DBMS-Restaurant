@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(31, 31, 31, 0.91);
+}
+
+.login {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font: normal;
+    align-items: center;
+}
+
+
+
+.login p {
+    text-align: center;
+    color: white;
+}
+
+.login .error {
+    color: coral;
+}
+
+.loginfield {
+    margin: auto;
+    display: block;
+}
+
+.btn {
+    margin: auto;
+    display: block;
+    width: 110px;
+    height: 35px;
+    background: rgb(31, 31, 31, 0.91);
+    border: none;
+    border-color: rgb(31, 31, 31, 0.91);
+    border-radius: 5px;
+    text-decoration: none;
+    align-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+    border-color: white;
+    color:rgb(31, 31, 31, 0.91);
+}
+
