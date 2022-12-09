@@ -1,5 +1,5 @@
 # DBMS-Restaurant
-Project for CS 5200: Database Management Systems at Northeastern University
+Final Project for CS 5200: Database Management Systems at Northeastern University
 
 Required Python Modules:
   pymysql: (https://pypi.org/project/PyMySQL/), 
